@@ -1,0 +1,35 @@
+{
+  "name": "formclient",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "clean": "rimraf dist",
+    "prebuild": "npm run clean",
+    "build": "tsc",
+    "create-local-settings": "shx test -f local.settings.json || (shx cp template.local.settings.json local.settings.json & shx echo local.settings.json not found. TASK ABORTED. & shx echo Created default local.settings.json. Please check its values and then try again. & exit 1)",
+    "prestart": "npm run create-local-settings && npm run build",
+    "start": "func start --port 8080",
+    "graphql-codegen": "graphql-codegen"
+  },
+  "dependencies": {
+    "@apollo/client": "^3.8.8",
+    "@azure/functions": "^4.0.0",
+    "@neo4j/graphql": "^4.4.2",
+    "@neo4j/graphql-ogm": "^4.4.2",
+    "@typeform/api-client": "^1.15.2",
+    "cors": "^2.8.5",
+    "graphql": "^16.8.1",
+    "neo4j-driver": "^5.14.0",
+    "react": "^18.2.0"
+  },
+  "devDependencies": {
+    "@graphql-codegen/cli": "^5.0.0",
+    "@graphql-codegen/client-preset": "^4.1.0",
+    "@types/node": "^18.x",
+    "@types/react": "^18.2.39",
+    "rimraf": "^5.0.0",
+    "shx": "^0.3.4",
+    "typescript": "^4.0.0"
+  },
+  "main": "dist/src/functions/*.js"
+}

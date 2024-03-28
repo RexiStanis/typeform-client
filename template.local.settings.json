@@ -1,0 +1,11 @@
+{
+  "IsEncrypted": false,
+  "Values": {
+    "AzureWebJobsStorage": "UseDevelopmentStorage=true",
+    "FUNCTIONS_WORKER_RUNTIME": "node",
+    "AzureWebJobsFeatureFlags": "EnableWorkerIndexing",
+    "APOLLO_ENDPOINT_URL": "http://127.0.0.1:7071/api/graphql",
+    "TYPEFORM_API_KEY":"",
+    "TYPEFORM_API_URL":"https://api.typeform.com"
+  }
+}
